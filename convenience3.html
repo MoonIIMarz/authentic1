@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head runat="server">
+            <meta charset="UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta property="og:title" content="Convenient" />
+            <meta property="og:type" content="image.png" />
+            <meta property="og:url" content="http://172.32.250.99/MasterTaste/quick_convenience.aspx"/>
+            <meta property="og:image" content="http://172.32.250.99/MasterTaste/4Share/Convenience-3.png" />
+        
+            <title>Quick & Convenience</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"/>
+            <link rel="stylesheet" href="style.css"/>
+            <script src="https://kit.fontawesome.com/33d0b884fd.js" crossorigin="anonymous"></script>
+        
+        </head>
+        <body onload="getData()">
+            <header>
+                <div class="home-container">
+                    <nav>
+                        <div class="nav-brand">
+                            <a href="home.html"><img src="small-logo-whiteBG.png" alt="" class="slogo-image"/></a>
+                        </div>
+                        <div class="menu-icons open">
+                            <i class="fa-solid fa-bars" onclick="openNav()"></i>
+                        </div>
+                        <ul class="nav-list-other" id="open">
+                            <li class="menu-icons close">
+                                <i class="fa-solid fa-xmark" onclick="closeNav()"></i>
+                            </li>
+                            <li class="nav-item">
+                                <a href="home.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="name.html" class="nav-link">Take The Test</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="personalities.html" class="nav-link">Personalities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="ComingSoon.html" class="nav-link">People & Career</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.sorkon.co.th/" class="nav-link">S.Khonkaen</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="main-result">
+                <h1 id="sname"></h1>
+                <p>&nbsp &nbsp เป็นสายด่วน</p>
+            </div>
+            <div class="main-personal">
+                <img src="quick_convenience.gif" alt="" class="main-result-image"/>
+            </div>
+            <div class="result-personal">
+                <p>
+                    คุณเป็นคนที่งานยุ่งมาก หรือไม่ก็อาจจะเคยชินกับไลฟ์สไตล์<br />
+                    ที่เร่งรีบเป็นประจำ อาหารที่คุณเลือกทานจึงมักเป็นอะไร<br />
+                    ที่ทานง่าย เน้นความสะดวกและรวดเร็วมาเป็นอันดับแรก<br /> 
+                    ส่วนรสชาตินั้นเป็นเรื่องรอง อาหารกึ่งสำเร็จรูปก็ได้<br /> 
+                    หรือถ้าร้านไหนใกล้และเสิร์ฟได้เร็วก็ร้านนั้นแหละ หรือหากจะต้อง<br />
+                    สั่งผ่านแอพฯ เดลิเวอรี่ คุณก็มักจะเลือกร้านใกล้ๆ<br /> 
+                    ที่มาส่งได้ก่อนเสมอเช่นกัน 
+                    
+                </p>
+            </div>
+            <div class="result-button">
+                <button class="result-btn" onclick="reset();"><i class="fa-solid fa-arrow-rotate-left"></i> &nbsp;ทำอีกครั้ง</button>
+                <button id="shareBtn" class="result-btn">แชร์เลย!</button>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="close-modal_bg">
+                        <span class="close-modal">&times;</span>
+                    </div>
+                    <img src="share_BG.png" alt="" class="modal-content-img"/>
+                    <div class="mian-modal-share">
+                        <img src="fb_share.png" alt="" class="modal-content-share" onclick="shareOnFacebook()" />
+                        <img src="ing_share.png" alt="" class="modal-content-share" />
+                        <img src="email_share.png" alt="" class="modal-content-share" onclick="shareOnMail()" />             
+                        <a href = "4Share/Convenience-3.png" download = "Quick_convenience.png" class="modal-content-load" ><img src="download_share.png" alt="" class="modal-content-share" /></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="main-score">
+                <h1>your score of</h1>
+                <div class="personality-bg">
+                    <img src="explorer_BG.png" alt="" class="personality-bg-img" />
+                    <div class="main-score-explorer">
+                        <h1 id="explorer" class="score-input"></h1>
+                        <h1 class="score-input">%</h1>
+                    </div>
+                </div>
+                <div class="personality-bg">
+                    <img src="healthy_BG.png" alt="" class="personality-bg-img" />
+                    <div class="main-score-healthy">
+                        <h1 id="healthy" class="score-input"></h1>
+                        <h1 class="score-input">%</h1>
+                    </div>
+                </div>
+                <div class="personality-bg">
+                    <img src="authentic_BG.png" alt="" class="personality-bg-img" />
+                    <div class="main-score-authentic">
+                        <h1 id="authentic" class="score-input"></h1>
+                        <h1 class="score-input">%</h1>
+                    </div>
+                </div>
+                <div class="personality-bg">
+                    <img src="value_BG.png" alt="" class="personality-bg-img" />
+                    <div class="main-score-value">
+                        <h1 id="value" class="score-input"></h1>
+                        <h1 class="score-input">%</h1>
+                    </div>
+                </div>
+                <div class="personality-bg">
+                    <img src="covenient_BG.png" alt="" class="personality-bg-img" />
+                    <div class="main-score-convenience">
+                        <h1 id="convenience" class="score-input"></h1>
+                        <h1 class="score-input">%</h1>
+                    </div>
+                </div>
+                <div class="confirm-bg">
+                    <form id="form1" runat="server" autocomplete="off">
+        
+                        <div class="main-email-input">
+                            <asp:TextBox runat="server" ID="txtEmail" type="number" Class="email-input"></asp:TextBox>
+                        </div>
+                        <div class="main-email-button">
+                            <asp:Button Text="ยืนยัน" runat="server" ID="emailBtn" Class="email-btn" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+            <script>
+                function openNav() {
+                    const list = document.getElementById('open').classList;
+                    list.add('active')
+                }
+        
+                function closeNav() {
+                    const list = document.getElementById('open').classList;
+                    list.remove('active')
+                }
+        
+                function getData() {
+                    var vname = localStorage["name"];
+                    var vage = localStorage["age"];
+                    var vgender = localStorage["gender"];
+                    var youStyle = localStorage["you"];
+                    var max = localStorage["max"];
+                    var explorer_score = parseInt(localStorage["explorer"]);
+                    var healthy_score = parseInt(localStorage["healthy"]);
+                    var authentic_score = parseInt(localStorage["authentic"]);
+                    var value_score = parseInt(localStorage["value"]);
+                    var convenience_score = parseInt(localStorage["convenience"]);
+        
+                    if (isNaN(explorer_score)) explorer_score = 0;
+        
+                    if (isNaN(healthy_score)) healthy_score = 0;
+        
+                    if (isNaN(authentic_score)) authentic_score = 0;
+        
+                    if (isNaN(value_score)) value_score = 0;
+        
+                    if (isNaN(convenience_score)) convenience_score = 0;
+        
+        
+                    console.log(vname, vage, vgender, youStyle, max);
+                    document.getElementById("sname").innerHTML = vname;
+                    document.getElementById("explorer").innerHTML = explorer_score;
+                    document.getElementById("healthy").innerHTML = healthy_score;
+                    document.getElementById("authentic").innerHTML = authentic_score
+                    document.getElementById("value").innerHTML = value_score;
+                    document.getElementById("convenience").innerHTML = convenience_score;
+                };
+        
+                function reset() {
+        
+                    sessionStorage.clear();
+                    window.location = "explorer1.html";
+                }
+        
+                // Get the modal
+                var modal = document.getElementById("myModal");
+        
+                // Get the button that opens the modal
+                var btn = document.getElementById("shareBtn");
+        
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close-modal")[0];
+        
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+        
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+        
+                var url = window.location.href;
+                function shareOnFacebook() {
+                    /*var url = window.location.href;*/
+        
+                    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+                    window.open(navUrl, '_blank');
+                }
+        
+                var mail = 'mailto:email@example.com?subject=My Personality type&body=' + url;
+                function shareOnMail() {
+                    window.open(mail, '_blank');
+                }
+        
+            </script>
+        </body>
+        </html>

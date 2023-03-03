@@ -4,12 +4,12 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta property="og:title" content="Authentic" />
+        <meta property="og:title" content="Healthy" />
         <meta property="og:type" content="image.png" />
-        <meta property="og:url" content="http://172.32.250.99/MasterTaste/thaifood_seeker.aspx"/>
-        <meta property="og:image" content="http://172.32.250.99/MasterTaste/4Share/Authentic-2.png" />
+        <meta property="og:url" content="http://172.32.250.99/MasterTaste/go_with_the_flow.aspx"/>
+        <meta property="og:image" content="http://172.32.250.99/MasterTaste/4Share/Healthy-3.png" />
     
-        <title>Thai Food Seeker</title>
+        <title>Go with the flow</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"/>
         <link rel="stylesheet" href="style.css"/>
         <script src="https://kit.fontawesome.com/33d0b884fd.js" crossorigin="anonymous"></script>
@@ -48,22 +48,24 @@
                 </nav>
             </div>
         </header>
-        <div class="main-result">
+        <div class="main-result-go">
             <h1 id="sname"></h1>
-            <p>&nbsp &nbsp เป็นสายอาหารไทย</p>
+            <p>&nbsp &nbsp เป็นสายสุขภาพแบบยืดหยุ่น</p>
         </div>
         <div class="main-personal">
-            <img src="thai_food_seeker.gif" alt="" class="main-result-image"/>
+            <img src="go_with_the_flow.gif" alt="" class="main-result-image"/>
         </div>
         <div class="result-personal">
             <p>
-                คุณคือกูรูอาหารไทยตัวจริงเสียงจริง<br />
-                ต่อให้มีอาหารนานาชาติมาให้เลือกตรงหน้า<br />
-                คุณก็จะเลือกอาหารไทยก่อนเสมอ เช่นเดียวกับขนมหวาน<br />
-                ที่ต้องเป็นขนมไทยเท่านั้น คุณหลงใหลในกรรมวิธีการปรุง<br />
-                อันซับซ้อน และรสชาติจัดจ้านครบเครื่องอันเป็นเอกลักษณ์<br />
-                ของอาหารไทย คุณชื่นชอบที่จะตามไปชิมร้านเด็ดร้านดัง<br />
-                ระดับปรมาจารย์ให้ได้ แม้ว่าจะต้องใช้ความพยายามขนาดไหนก็ตาม<br /> 
+                คุณเป็นคนเฮลท์ตี้แค่ตามกระแส<br />
+                เลือกทานอาหารโดยเน้นความสะดวกมากกว่าจะตั้งธงว่า<br />
+                ต้องเป็นอาหารเพื่อสุขภาพเท่านั้น แต่ถ้าฟ้าฝนเป็นใจ<br /> 
+                หรือมีทางเลือกอาหารคลีนอยู่ใกล้ๆ ก็ไม่เคยคิดจะปฏิเสธ<br />
+                คุณเป็นคนเฮลท์ตี้ที่มีความยืดหยุ่นสูงมาก<br />
+                เน้นปรับพฤติกรรมการทานตามที่ทำได้จริงมากกว่าต้องบังคับ<br />
+                ตัวเอง และยังเป็นคนที่สนใจเรื่องเทรนด์การรับประทานอาหาร<br />
+                ที่เปลี่ยนไปอยู่เสมออีกด้วย 
+                
             </p>
         </div>
         <div class="result-button">
@@ -82,7 +84,7 @@
                     <img src="fb_share.png" alt="" class="modal-content-share" onclick="shareOnFacebook()" />
                     <img src="ing_share.png" alt="" class="modal-content-share" />
                     <img src="email_share.png" alt="" class="modal-content-share" onclick="shareOnMail()" />             
-                    <a href = "4Share/Authentic-2.png" download = "Thaifood_seeker.png" class="modal-content-load" ><img src="download_share.png" alt="" class="modal-content-share" /></a>
+                    <a href = "4Share/Healthy-3.png" download = "Go_with_the_flow.png" class="modal-content-load" ><img src="download_share.png" alt="" class="modal-content-share" /></a>
                 </div>
             </div>
         </div>
@@ -128,7 +130,7 @@
                 <form id="form1" runat="server" autocomplete="off">
     
                     <div class="main-email-input">
-                        <asp:TextBox runat="server" ID="txtEmail" type="number" Class="email-input"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txtEmail" Type="number" Class="email-input"></asp:TextBox>
                     </div>
                     <div class="main-email-button">
                         <asp:Button Text="ยืนยัน" runat="server" ID="emailBtn" Class="email-btn" />
@@ -183,7 +185,7 @@
             function reset() {
     
                 sessionStorage.clear();
-                window.location = "authentic3.html";
+                window.location = "value1.html";
             }
     
             // Get the modal
