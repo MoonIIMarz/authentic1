@@ -131,7 +131,7 @@
                     <asp:TextBox runat="server" ID="txtEmail" Class="email-input"></asp:TextBox>
                 </div>
                 <div class="main-email-button">
-                    <asp:Button Text="ยืนยัน" runat="server" ID="emailBtn" Class="email-btn" OnClientClick="return false"/>
+                    <asp:Button Text="ยืนยัน" runat="server" ID="emailBtn" Class="email-btn" OnClientClick="next()"/>
                 </div>
             </form>
         </div>
@@ -185,7 +185,7 @@
         function reset() {
 
             sessionStorage.clear();
-            window.location = "quiz.aspx"
+            window.location = "authentic2.html"
         }
 
         // Get the modal
@@ -217,10 +217,6 @@
         var mail = 'mailto:email@example.com?subject=My Personality type&body=' + url;
         function shareOnMail() {
             window.open(mail, '_blank');
-        }
-
-        function next() {
-            window.location = "authentic2.html"
         }
 
 
